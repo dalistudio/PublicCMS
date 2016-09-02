@@ -8,8 +8,8 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import com.publiccms.common.servlet.MultiSiteDispatcherServlet;
-import com.sanluan.common.base.Base;
+import net.dalistudio.common.servlet.MultiSiteDispatcherServlet;
+import com.wangdali.common.base.Base;
 
 import config.ApiConfig;
 

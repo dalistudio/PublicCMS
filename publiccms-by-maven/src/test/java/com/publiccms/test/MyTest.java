@@ -1,4 +1,4 @@
-package com.publiccms.test;
+package net.dalistudio.test;
 
 import java.util.Date;
 
@@ -9,8 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.publiccms.entities.log.LogOperate;
-import com.publiccms.logic.service.log.LogOperateService;
+import net.dalistudio.entities.log.LogOperate;
+import net.dalistudio.logic.service.log.LogOperateService;
 
 import config.ApplicationConfig;
 

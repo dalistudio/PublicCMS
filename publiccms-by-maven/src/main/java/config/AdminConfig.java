@@ -11,8 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
-import com.publiccms.common.interceptor.admin.AdminContextInterceptor;
-import com.publiccms.common.view.admin.AdminFreeMarkerView;
+import net.dalistudio.common.interceptor.admin.AdminContextInterceptor;
+import net.dalistudio.common.view.admin.AdminFreeMarkerView;
 
 /**
  * 
@@ -21,7 +21,7 @@ import com.publiccms.common.view.admin.AdminFreeMarkerView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.publiccms.views.controller.admin", useDefaultFilters = false, includeFilters = {
+@ComponentScan(basePackages = "net.dalistudio.views.controller.admin", useDefaultFilters = false, includeFilters = {
 		@ComponentScan.Filter(value = { Controller.class }) })
 public class AdminConfig extends WebMvcConfigurerAdapter {
 	/**

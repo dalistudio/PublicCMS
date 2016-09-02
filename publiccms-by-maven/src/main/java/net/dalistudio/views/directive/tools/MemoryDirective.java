@@ -1,0 +1,27 @@
+package net.dalistudio.views.directive.tools;
+
+import java.io.IOException;
+
+import org.springframework.stereotype.Component;
+
+import net.dalistudio.common.base.AbstractTemplateDirective;
+import com.wangdali.common.handler.RenderHandler;
+
+/**
+ * 
+ * VersionDirective 技术框架版本指令
+ *
+ */
+@Component
+public class MemoryDirective extends AbstractTemplateDirective {
+
+    @Override
+    public void execute(RenderHandler handler) throws IOException, Exception {
+        Runtime runtime = Runtime.getRuntime();
+        handler.put("freeMemory", runtime.freeMemory());
+        handler.put("totalMemory", runtime.totalMemory());
+        handler.put("maxMemory", runtime.maxMemory());
+        handler.render();
+    }
+
+}

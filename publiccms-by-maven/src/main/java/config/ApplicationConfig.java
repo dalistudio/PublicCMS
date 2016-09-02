@@ -29,11 +29,11 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import com.publiccms.common.view.InitializeFreeMarkerView;
-import com.publiccms.logic.component.SiteComponent;
-import com.publiccms.logic.component.TemplateComponent;
-import com.sanluan.common.base.Base;
-import com.sanluan.common.datasource.MultiDataSource;
+import net.dalistudio.common.view.InitializeFreeMarkerView;
+import net.dalistudio.logic.component.SiteComponent;
+import net.dalistudio.logic.component.TemplateComponent;
+import com.wangdali.common.base.Base;
+import com.wangdali.common.datasource.MultiDataSource;
 
 /**
  * 
@@ -41,7 +41,7 @@ import com.sanluan.common.datasource.MultiDataSource;
  *
  */
 @Configuration
-@ComponentScan(basePackages = "com.publiccms", excludeFilters = { @ComponentScan.Filter(value = { Controller.class }) })
+@ComponentScan(basePackages = "net.dalistudio", excludeFilters = { @ComponentScan.Filter(value = { Controller.class }) })
 @PropertySource({ "classpath:config/properties/dbconfig.properties", "classpath:config/properties/freemarker.properties",
         "classpath:config/properties/other.properties" })
 @EnableTransactionManagement
@@ -114,7 +114,7 @@ public class ApplicationConfig extends Base {
         return new LocalSessionFactoryBean() {
             {
                 setDataSource(dataSource());
-                setPackagesToScan(new String[] { "com.publiccms.entities" });
+                setPackagesToScan(new String[] { "net.dalistudio.entities" });
                 setHibernateProperties(new Properties() {
                     private static final long serialVersionUID = 1L;
                     {

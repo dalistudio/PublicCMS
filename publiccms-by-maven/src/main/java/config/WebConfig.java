@@ -11,10 +11,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.publiccms.common.interceptor.web.WebContextInterceptor;
-import com.publiccms.common.view.WebFreeMarkerViewResolver;
-import com.publiccms.common.view.web.WebFreeMarkerView;
-import com.publiccms.logic.component.TemplateComponent;
+import net.dalistudio.common.interceptor.web.WebContextInterceptor;
+import net.dalistudio.common.view.WebFreeMarkerViewResolver;
+import net.dalistudio.common.view.web.WebFreeMarkerView;
+import net.dalistudio.logic.component.TemplateComponent;
 
 /**
  * 
@@ -23,7 +23,7 @@ import com.publiccms.logic.component.TemplateComponent;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.publiccms.views.controller.web", useDefaultFilters = false, includeFilters = {
+@ComponentScan(basePackages = "net.dalistudio.views.controller.web", useDefaultFilters = false, includeFilters = {
 		@ComponentScan.Filter(value = { Controller.class }) })
 public class WebConfig extends WebMvcConfigurerAdapter {
 	@Autowired

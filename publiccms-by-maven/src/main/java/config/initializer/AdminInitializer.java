@@ -11,8 +11,8 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import org.springframework.web.util.IntrospectorCleanupListener;
 
-import com.sanluan.common.base.Base;
-import com.sanluan.common.servlet.ErrorToNotFoundDispatcherServlet;
+import com.wangdali.common.base.Base;
+import com.wangdali.common.servlet.ErrorToNotFoundDispatcherServlet;
 
 import config.AdminConfig;
 import config.ApplicationConfig;
