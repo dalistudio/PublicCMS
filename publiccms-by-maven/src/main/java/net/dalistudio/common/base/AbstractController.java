@@ -49,10 +49,16 @@ public abstract class AbstractController extends BaseController {
     @Autowired
     protected SiteComponent siteComponent;
 
+    /*
+     * 获得域名
+     */
     protected SysDomain getDomain(HttpServletRequest request) {
         return siteComponent.getDomain(request.getServerName(), request.getServerPort());
     }
 
+    /*
+     * 获得网站
+     */
     protected SysSite getSite(HttpServletRequest request) {
         return siteComponent.getSite(request.getServerName(), request.getServerPort());
     }
@@ -114,6 +120,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 获得管理的会话
+     * 
      * @param session
      * @return
      */
@@ -122,6 +130,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 设置管理员的会话
+     * 
      * @param session
      * @param user
      */
@@ -130,6 +140,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无用户名
+     * 
      * @param value
      * @return
      */
@@ -142,6 +154,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无昵称
+     * 
      * @param value
      * @return
      */
@@ -154,6 +168,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无手机
+     * 
      * @param value
      * @return
      */
@@ -166,6 +182,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无邮箱
+     * 
      * @param field
      * @param value
      * @param model
@@ -180,6 +198,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无用户名
+     * 
      * @param field
      * @param value
      * @param model
@@ -194,6 +214,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无昵称
+     * 
      * @param field
      * @param value
      * @param model
@@ -208,6 +230,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无手机
+     * 
      * @param field
      * @param value
      * @param model
@@ -222,6 +246,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无邮箱
+     * 
      * @param value
      * @return
      */
@@ -246,6 +272,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 验证无邮箱和手机
+     * 
      * @param field
      * @param value
      * @param model
@@ -260,6 +288,8 @@ public abstract class AbstractController extends BaseController {
     }
 
     /**
+     * 清理管理员的会话
+     * 
      * @param session
      */
     public static void clearAdminToSession(HttpSession session) {

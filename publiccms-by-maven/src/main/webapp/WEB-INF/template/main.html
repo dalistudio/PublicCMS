@@ -284,9 +284,8 @@ echarts.init(document.getElementById('disk')).setOption({
 <@_version>
 	<div class="unit">
 		<p id="cmsVersion">
-			<label>Public CMS:</label>
-			<a href="http://www.publiccms.com/" target="_blank">${cms}</a>
-			(<a href="http://opensource.org/licenses/MIT" target="_blank">The MIT License</a>)
+			<label>软件版本:</label>
+			<a href="http://www.dalistudio.com/" target="_blank">${cms}</a>
 		</p>
 	<@_masterSite>
 		<p>
@@ -298,7 +297,7 @@ echarts.init(document.getElementById('disk')).setOption({
 			${master?string('管理节点','[普通节点]')}
 		</p>
 		<script>
-			$.getJSON('http://cms.publiccms.com/api/directive/version?callback=?',function(data){
+			$.getJSON('http://cms.dalistudio.com/api/directive/version?callback=?',function(data){
 				if($('#cmsVersion a').eq(0).text()!==data.cms){
 					$('#cmsVersion a').eq(0).append('[<em style="color:red">有新版本</em>]');
 				}

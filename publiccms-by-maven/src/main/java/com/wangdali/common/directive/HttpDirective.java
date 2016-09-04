@@ -15,6 +15,8 @@ import org.springframework.http.converter.HttpMessageConverter;
  */
 public interface HttpDirective {
     /**
+     * 执行
+     * 
      * @param httpMessageConverter
      * @param mediaType
      * @param request

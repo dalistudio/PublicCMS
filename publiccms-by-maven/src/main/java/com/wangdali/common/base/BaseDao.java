@@ -28,22 +28,42 @@ import com.wangdali.common.handler.FacetPageHandler;
 import com.wangdali.common.handler.PageHandler;
 import com.wangdali.common.handler.QueryHandler;
 
+/**
+ * 数据访问基类
+ * 
+ * @author dali
+ *
+ * @param <E>
+ */
+
 public abstract class BaseDao<E> extends Base {
     public static String FACET_NAME_SUFFIX = "FacetRequest";
     private Class<E> clazz;
 
+    /*
+     * 获得明天的日期时间
+     */
     public static Date tomorrow(Date date) {
         return addDays(date, 1);
     }
 
+    /*
+     * 获得查询处理器
+     */
     public static QueryHandler getQueryHandler(String sql) {
         return new QueryHandler(sql);
     }
 
+    /*
+     * 获得删除处理器
+     */
     public static QueryHandler getDeleteQueryHandler(String sql) {
         return getQueryHandler("delete").append(sql);
     }
 
+    /*
+     * 获得查询的记录总数
+     */
     public static QueryHandler getCountQueryHandler(String sql) {
         return getQueryHandler("select count(*)").append(sql);
     }
@@ -52,19 +72,30 @@ public abstract class BaseDao<E> extends Base {
         return new QueryHandler();
     }
 
+    /*
+     * 模糊查询
+     */
     public static String like(String var) {
         return "%" + var + "%";
     }
 
+    /*
+     * 模糊查询结束
+     */
     public static String likeEnd(String var) {
         return "%" + var;
     }
 
+    /*
+     * 模糊查询开始
+     */
     public static String likeStart(String var) {
         return var + "%";
     }
 
     /**
+     * 获得实体
+     * 
      * @param id
      * @return
      */
@@ -73,6 +104,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 获得实体
+     * 
      * @param id
      * @return
      */
@@ -83,6 +116,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 获得实体
+     * 
      * @param ids
      * @return
      */
@@ -106,6 +141,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 保存
+     * 
      * @param entity
      * @return
      */
@@ -114,6 +151,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 删除
+     * 
      * @param id
      * @return
      */
@@ -125,6 +164,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 查询处理器
+     * 
      * @param queryHandler
      * @return
      */
@@ -138,6 +179,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 更新
+     * 
      * @param query
      * @return
      */
@@ -146,6 +189,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 删除
+     * 
      * @param query
      * @return
      */
@@ -154,6 +199,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 获得链表
+     * 
      * @param query
      * @return
      */
@@ -162,6 +209,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 获得页面
+     * 
      * @param queryHandler
      * @param pageIndex
      * @param pageSize
@@ -183,6 +232,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 获得页面
+     * 
      * @param queryHandler
      * @param pageIndex
      * @param pageSize
@@ -193,6 +244,8 @@ public abstract class BaseDao<E> extends Base {
     }
 
     /**
+     * 获得记录结果的总数
+     * 
      * @param query
      * @return
      */

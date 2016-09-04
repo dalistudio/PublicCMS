@@ -16,24 +16,27 @@ import com.wangdali.common.handler.RenderHandler;
  *
  */
 public abstract class BaseHandler extends Base implements RenderHandler {
-    public static final String PARAMETERS_NAME = "parameters";
-    public static final String PARAMETERS_CONTROLLER = "showParamters";
-    public static final String PARAMETER_TYPE_STRING = "string";
-    public static final String PARAMETER_TYPE_CHAR = "char";
-    public static final String PARAMETER_TYPE_SHORT = "short";
-    public static final String PARAMETER_TYPE_LONG = "long";
-    public static final String PARAMETER_TYPE_DOUBLE = "double";
-    public static final String PARAMETER_TYPE_LONGARRAY = "longArray";
-    public static final String PARAMETER_TYPE_DATE = "date";
-    public static final String PARAMETER_TYPE_BOOLEAN = "boolean";
-    public static final String PARAMETER_TYPE_INTEGER = "integer";
-    public static final String PARAMETER_TYPE_INTEGERARRAY = "integerArray";
-    public static final String PARAMETER_TYPE_STRINGARRAY = "stringArray";
+    public static final String PARAMETERS_NAME = "parameters"; // 参数
+    public static final String PARAMETERS_CONTROLLER = "showParamters"; // 短参数
+    public static final String PARAMETER_TYPE_STRING = "string"; // 字符串
+    public static final String PARAMETER_TYPE_CHAR = "char"; // 字符
+    public static final String PARAMETER_TYPE_SHORT = "short"; // 短整
+    public static final String PARAMETER_TYPE_LONG = "long"; // 长整
+    public static final String PARAMETER_TYPE_DOUBLE = "double"; // 双浮点
+    public static final String PARAMETER_TYPE_LONGARRAY = "longArray"; // 长数组
+    public static final String PARAMETER_TYPE_DATE = "date"; // 时间日期
+    public static final String PARAMETER_TYPE_BOOLEAN = "boolean"; // 布尔
+    public static final String PARAMETER_TYPE_INTEGER = "integer"; // 整型
+    public static final String PARAMETER_TYPE_INTEGERARRAY = "integerArray"; // 整型数组
+    public static final String PARAMETER_TYPE_STRINGARRAY = "stringArray"; // 字符串数组
     protected Map<String, Object> map = new LinkedHashMap<String, Object>();
     protected List<Map<String, Object>> parameterList;
     protected boolean regristerParamters;
     protected boolean renderd = false;
 
+    /*
+     * 注册参数
+     */
     public void regristerParamters() throws Exception {
         this.regristerParamters = getBooleanWithoutRegrister(PARAMETERS_CONTROLLER, false);
         if (regristerParamters) {
@@ -42,6 +45,9 @@ public abstract class BaseHandler extends Base implements RenderHandler {
         }
     }
 
+    /*
+     * 注册参数：字符串
+     */
     protected void regristerParamter(String type, String name) {
         regristerParamter(type, name, null);
     }

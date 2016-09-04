@@ -19,15 +19,18 @@ import com.wangdali.common.handler.RenderHandler;
  */
 public abstract class AbstractAppDirective extends BaseHttpDirective implements App {
 
+	/*
+	 * 获得网站
+	 */
     public SysSite getSite(RenderHandler handler) throws IOException, Exception {
         HttpServletRequest request = handler.getRequest();
         return siteComponent.getSite(request.getServerName(), request.getServerPort());
     }
 
-    public abstract boolean needUserToken();
+    public abstract boolean needUserToken(); // 需要用户令牌
 
-    public abstract boolean needAppToken();
+    public abstract boolean needAppToken(); // 需要应用令牌
 
     @Autowired
-    private SiteComponent siteComponent;
+    private SiteComponent siteComponent; // 网站组件
 }

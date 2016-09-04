@@ -38,6 +38,9 @@ public class AdminContextInterceptor extends BaseInterceptor {
     @Autowired
     private SysUserService sysUserService;
 
+    /*
+     * 预处理器
+     */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException {
         response.addHeader(getXPowered(), getVersion());
@@ -91,6 +94,9 @@ public class AdminContextInterceptor extends BaseInterceptor {
         return true;
     }
 
+    /*
+     * 重定向登陆
+     */
     private void redirectLogin(String ctxPath, String path, String queryString, String requestedWith,
             HttpServletResponse response) throws IOException {
         if ("XMLHttpRequest".equalsIgnoreCase(requestedWith)) {
@@ -101,6 +107,9 @@ public class AdminContextInterceptor extends BaseInterceptor {
         }
     }
 
+    /*
+     * 拥有一切权限
+     */
     private boolean ownsAllRight(String roles) {
         String[] roleIdArray = split(roles, ",");
         if (null != roles && 0 < roleIdArray.length) {
@@ -113,6 +122,9 @@ public class AdminContextInterceptor extends BaseInterceptor {
         return false;
     }
 
+    /*
+     * 验证需要登录
+     */
     private boolean verifyNeedLogin(String url) {
         if (null == loginUrl) {
             return false;
@@ -128,6 +140,9 @@ public class AdminContextInterceptor extends BaseInterceptor {
         return true;
     }
 
+    /*
+     * 验证需要已授权
+     */
     private boolean verifyNeedAuthorized(String url) {
         if (null == unauthorizedUrl) {
             return false;
@@ -143,22 +158,37 @@ public class AdminContextInterceptor extends BaseInterceptor {
         return true;
     }
 
+    /*
+     * 设置登录URL
+     */
     public void setLoginUrl(String loginUrl) {
         this.loginUrl = AdminInitializer.BASEPATH + loginUrl;
     }
 
+    /*
+     * 设置需要不登录URL
+     */
     public void setNeedNotLoginUrls(String[] needNotLoginUrls) {
         this.needNotLoginUrls = needNotLoginUrls;
     }
 
+    /*
+     * 设置登录JSON URL
+     */
     public void setLoginJsonUrl(String loginJsonUrl) {
         this.loginJsonUrl = AdminInitializer.BASEPATH + loginJsonUrl;
     }
 
+    /*
+     * 设置无授权URL
+     */
     public void setUnauthorizedUrl(String unauthorizedUrl) {
         this.unauthorizedUrl = AdminInitializer.BASEPATH + unauthorizedUrl;
     }
 
+    /*
+     * 设置需要非授权URL
+     */
     public void setNeedNotAuthorizedUrls(String[] needNotAuthorizedUrls) {
         this.needNotAuthorizedUrls = needNotAuthorizedUrls;
     }

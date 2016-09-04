@@ -34,6 +34,9 @@ public abstract class AbstractAppV1Directive extends AbstractAppDirective implem
         return null;
     }
 
+    /*
+     * 获得应用
+     */
     private SysApp getApp(RenderHandler handler) throws Exception {
         SysAppToken appToken = appTokenService.getEntity(handler.getString("appToken"));
         if (notEmpty(appToken)) {
@@ -42,6 +45,9 @@ public abstract class AbstractAppV1Directive extends AbstractAppDirective implem
         return null;
     }
 
+    /*
+     * 执行
+     */
     @Override
     public void execute(RenderHandler handler) throws IOException, Exception {
         SysApp app = null;

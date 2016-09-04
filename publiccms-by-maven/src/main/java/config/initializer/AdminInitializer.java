@@ -25,39 +25,60 @@ import config.ApplicationConfig;
 public class AdminInitializer extends AbstractAnnotationConfigDispatcherServletInitializer implements WebApplicationInitializer {
     public static final String BASEPATH = "/admin";
 
+    /*
+     * 启动
+     */
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        servletContext.addListener(IntrospectorCleanupListener.class);
-        ApplicationConfig.basePath = servletContext.getRealPath("/");
-        super.onStartup(servletContext);
+        servletContext.addListener(IntrospectorCleanupListener.class); // 添加监听
+        ApplicationConfig.basePath = servletContext.getRealPath("/"); // 获得真实路径
+        super.onStartup(servletContext); // 启动
     }
 
+    /*
+     * 创建调度Servlet
+     */
     @Override
     protected DispatcherServlet createDispatcherServlet(WebApplicationContext servletAppContext) {
         ApplicationConfig.webApplicationContext = servletAppContext;
         return new ErrorToNotFoundDispatcherServlet(servletAppContext);
     }
 
+    /*
+     * 获得Servlet配置类
+     */
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class[] { AdminConfig.class };
     }
 
+    /*
+     * 获得Servlet的名字
+     */
     @Override
     protected String getServletName() {
         return this.getClass().getSimpleName();
     }
 
+    /*
+     * 获得Servlet映射
+     */
     @Override
     protected String[] getServletMappings() {
         return new String[] { BASEPATH + "/*" };
     }
 
+    /*
+     * 获得根配置类
+     */
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[] { ApplicationConfig.class };
     }
 
+    /*
+     * 获得Servlet过滤器
+     */
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();

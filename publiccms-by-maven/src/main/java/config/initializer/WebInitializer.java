@@ -19,35 +19,54 @@ import config.WebConfig;
  *
  */
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer implements WebApplicationInitializer {
-    @Override
+
+	/*
+	 * 获得根配置类
+	 */
+	@Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
     }
 
+	/*
+	 * 创建调度 Servlet
+	 */
     @Override
     protected DispatcherServlet createDispatcherServlet(WebApplicationContext servletAppContext) {
-        return new MultiSiteDispatcherServlet(servletAppContext);
+        return new MultiSiteDispatcherServlet(servletAppContext); // 多网站调度Servlet
     }
 
+    /*
+     * 获得Servlet的名字
+     */
     @Override
     protected String getServletName() {
         return this.getClass().getSimpleName();
     }
 
+    /*
+     * 获得Servlet配置类
+     */
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class[] { WebConfig.class };
     }
 
+    /*
+     * 获得Servlet映射
+     */
     @Override
     protected String[] getServletMappings() {
         return new String[] { "/" };
     }
 
+    /*
+     * 获得Servlet过滤器
+     */
     @Override
     protected Filter[] getServletFilters() {
-        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-        characterEncodingFilter.setEncoding(Base.DEFAULT_CHARSET);
+        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter(); // 字符集编码过滤器
+        characterEncodingFilter.setEncoding(Base.DEFAULT_CHARSET); // 默认字符集
         characterEncodingFilter.setForceEncoding(true);
         return new Filter[] { characterEncodingFilter };
     }

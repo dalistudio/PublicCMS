@@ -8,12 +8,22 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * 服务的基类
+ * 
+ * @author dali
+ *
+ * @param <E>
+ */
+
 @Transactional
 public abstract class BaseService<E> extends Base {
     @Autowired
     protected BaseDao<E> dao;
 
     /**
+     * 获得实体
+     * 
      * @param id
      * @return
      */
@@ -22,6 +32,8 @@ public abstract class BaseService<E> extends Base {
     }
 
     /**
+     * 获得实体
+     * 
      * @param id
      * @param pk
      * @return
@@ -31,6 +43,8 @@ public abstract class BaseService<E> extends Base {
     }
 
     /**
+     * 获得实体
+     * 
      * @param id
      * @return
      */
@@ -39,6 +53,8 @@ public abstract class BaseService<E> extends Base {
     }
 
     /**
+     * 获得实体
+     * 
      * @param id
      * @return
      */
@@ -47,6 +63,8 @@ public abstract class BaseService<E> extends Base {
     }
 
     /**
+     * 删除
+     * 
      * @param id
      * @return
      */
@@ -57,6 +75,8 @@ public abstract class BaseService<E> extends Base {
     }
 
     /**
+     * 删除
+     * 
      * @param id
      * @return
      */
@@ -65,6 +85,8 @@ public abstract class BaseService<E> extends Base {
     }
 
     /**
+     * 更新
+     * 
      * @param id
      * @param newEntity
      * @param ignoreProperties
@@ -79,6 +101,8 @@ public abstract class BaseService<E> extends Base {
     }
 
     /**
+     * 更新
+     * 
      * @param id
      * @param newEntity
      * @return
@@ -91,6 +115,8 @@ public abstract class BaseService<E> extends Base {
     }
 
     /**
+     * 保存
+     * 
      * @param entity
      * @return
      */

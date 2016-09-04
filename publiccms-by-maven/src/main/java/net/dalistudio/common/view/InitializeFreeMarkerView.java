@@ -16,9 +16,9 @@ import net.dalistudio.logic.component.SiteComponent;
  *
  */
 public class InitializeFreeMarkerView extends FreeMarkerView {
-    protected static final String CONTEXT_ADMIN = "admin";
-    protected static final String CONTEXT_USER = "user";
-    public static SiteComponent siteComponent;
+    protected static final String CONTEXT_ADMIN = "admin"; //管理员
+    protected static final String CONTEXT_USER = "user"; // 用户
+    public static SiteComponent siteComponent; // 网站组件
 
     @Override
     protected void exposeHelpers(Map<String, Object> model, HttpServletRequest request) throws Exception {

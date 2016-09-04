@@ -13,19 +13,25 @@ import org.springframework.ui.ModelMap;
 /**
  * 
  * BaseController
+ * 控制器的基类
  *
  */
 public abstract class BaseController extends Base {
-    protected static final String REDIRECT = REDIRECT_URL_PREFIX;
-    protected static final String FORWARD = FORWARD_URL_PREFIX;
-    protected static final String ERROR = "error";
+    protected static final String REDIRECT = REDIRECT_URL_PREFIX; // 重定向
+    protected static final String FORWARD = FORWARD_URL_PREFIX; // 向前
+    protected static final String ERROR = "error"; // 错误
 
+    /*
+     * 永久重定向
+     */
     protected static void redirectPermanently(HttpServletResponse response, String url) {
-        response.setHeader("Location", url);
-        response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+        response.setHeader("Location", url); // 设置HTTP的Location头
+        response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY); // 设置状态 301
     }
 
     /**
+     * 验证不为空
+     * 
      * @param field
      * @param value
      * @param model
@@ -40,6 +46,8 @@ public abstract class BaseController extends Base {
     }
 
     /**
+     * 验证自定义
+     * 
      * @param field
      * @param value
      * @param model
@@ -54,6 +62,8 @@ public abstract class BaseController extends Base {
     }
 
     /**
+     * 验证不为空
+     * 
      * @param field
      * @param value
      * @param model
@@ -68,6 +78,8 @@ public abstract class BaseController extends Base {
     }
 
     /**
+     * 验证不大于
+     * 
      * @param field
      * @param value
      * @param specific
@@ -104,6 +116,8 @@ public abstract class BaseController extends Base {
     }
 
     /**
+     * 验证不小于
+     * 
      * @param field
      * @param value
      * @param specific
@@ -122,6 +136,8 @@ public abstract class BaseController extends Base {
     }
 
     /**
+     * 验证不存在
+     * 
      * @param field
      * @param value
      * @param model
@@ -136,6 +152,8 @@ public abstract class BaseController extends Base {
     }
 
     /**
+     * 验证已存在
+     * 
      * @param field
      * @param value
      * @param model
@@ -150,6 +168,8 @@ public abstract class BaseController extends Base {
     }
     
     /**
+     * 验证等于
+     * 
      * @param field
      * @param value
      * @param value2
@@ -165,6 +185,8 @@ public abstract class BaseController extends Base {
     }
 
     /**
+     * 验证字符串不等于
+     * 
      * @param field
      * @param value1
      * @param value2
@@ -180,6 +202,7 @@ public abstract class BaseController extends Base {
     }
 
     /**
+     * 验证整数不等于
      * @param field
      * @param value1
      * @param value2
@@ -195,6 +218,8 @@ public abstract class BaseController extends Base {
     }
     
     /**
+     * 验证长整型不等于
+     * 
      * @param field
      * @param value1
      * @param value2

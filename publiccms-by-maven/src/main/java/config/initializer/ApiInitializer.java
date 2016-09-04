@@ -19,31 +19,50 @@ import config.ApiConfig;
  *
  */
 public class ApiInitializer extends AbstractAnnotationConfigDispatcherServletInitializer implements WebApplicationInitializer {
-    @Override
+
+	/*
+	 * 获得根配置类
+	 */
+	@Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
     }
 
+	/*
+	 * 创建调度Servlet
+	 */
     @Override
     protected DispatcherServlet createDispatcherServlet(WebApplicationContext servletAppContext) {
         return new MultiSiteDispatcherServlet(servletAppContext);
     }
 
+    /*
+     * 获得Servlet的名字
+     */
     @Override
     protected String getServletName() {
         return this.getClass().getSimpleName();
     }
 
+    /*
+     * 获得Servlet配置类
+     */
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class[] { ApiConfig.class };
     }
 
+    /*
+     * 获得Servlet映射
+     */
     @Override
     protected String[] getServletMappings() {
         return new String[] { "/api/*" };
     }
 
+    /*
+     * 获得Servlet过滤器
+     */
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();

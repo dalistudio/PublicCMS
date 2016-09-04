@@ -1,20 +1,23 @@
 package net.dalistudio.common.constants;
 
 public class CommonConstants {
+	/*
+	 * 获得会话用户
+	 */
     public static String getSessionUser() {
-        return "PUBLICCMS_USER";
+        return "DALISTUDIO_USER";
     }
     
     public static String getSessionUserTime() {
-        return "PUBLICCMS_USER_TIME";
+        return "DALISTUDIO_USER_TIME";
     }
 
     public static final String getSessionAdmin() {
-        return "PUBLICCMS_ADMIN";
+        return "DALISTUDIO_ADMIN";
     }
 
     public static final String getCookiesUser() {
-        return "PUBLICCMS_USER";
+        return "DALISTUDIO_USER";
     }
 
     public static final String getCookiesUserSplit() {
@@ -26,6 +29,6 @@ public class CommonConstants {
     }
 
     public static final String getXPowered() {
-        return "X-Powered-PublicCMS";
+        return "X-Powered-Dalistudio";
     }
 }

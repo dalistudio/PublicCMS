@@ -12,6 +12,8 @@ import com.wangdali.common.handler.RenderHandler;
 public interface Directive {
 
     /**
+     * 执行
+     * 
      * @param handler
      * @throws IOException
      * @throws Exception
