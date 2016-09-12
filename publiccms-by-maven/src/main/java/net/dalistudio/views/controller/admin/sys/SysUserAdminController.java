@@ -38,8 +38,10 @@ public class SysUserAdminController extends AbstractController {
         entity.setName(trim(entity.getName()));
         entity.setNickName(trim(entity.getNickName()));
         entity.setPassword(trim(repassword));
-        repassword = trim(entity.getNickName());
-        if (verifyNotEmpty("username", entity.getName(), model) || verifyNotEmpty("nickname", entity.getNickName(), model)
+        // 这句不因该把密码验证替换成昵称
+//        repassword = trim(entity.getNickName());
+        if (verifyNotEmpty("username", entity.getName(), model) 
+        		|| verifyNotEmpty("nickname", entity.getNickName(), model)
                 || verifyNotUserName("username", entity.getName(), model)
                 || verifyNotNickName("nickname", entity.getNickName(), model)) {
             return TEMPLATE_ERROR;

@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>publiccms</groupId>
+	<groupId>net.dalistudio</groupId>
 	<artifactId>cms</artifactId>
-	<version>V2016.0828</version>
+	<version>V2016.0808</version>
 	<packaging>war</packaging>
-	<name>PublicCMS</name>
-	<url>http://www.publiccms.com/</url>
-	<description>PublicCMS</description>
+	<name>Dalistudio CMS</name>
+	<url>http://www.dalistudio.net/</url>
+	<description>Dalistudio CMS</description>
 	<properties>
 		<springVersion>4.3.2.RELEASE</springVersion>
 		<hibernateVersion>5.1.1.Final</hibernateVersion>
